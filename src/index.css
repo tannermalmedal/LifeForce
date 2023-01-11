@@ -1,0 +1,124 @@
+:root{
+    /* use var(--variablename) to use a variable */
+    --background: #16161a;
+    --initial-btn: #7f5af0;
+    --button-text: #fffffe;
+    --paragraph-text: #94a1b2;
+    --headline-text: #fffffe;
+
+    --stroke: #010101;
+    --main: #fffffe;
+    --highlight: #7f5af0;
+    --secondary: #72757e;
+    --tertiary: #2cb67d;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--main);
+}
+
+#root{
+    height: 100vh;
+}
+
+.app{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 64px;
+}
+
+/* header  */
+header{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 64px;
+}
+
+
+/* buttons */
+
+button{
+    cursor: pointer;
+}
+
+button:hover {
+    border-bottom-color: var(--tertiary);
+    transition: 0.5s;
+}
+.btn-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.triangle-btn{
+    width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 200px solid var(--secondary);
+    background: none;
+    border-top: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.trap-btn{
+    border-bottom: 150px solid var(--secondary);
+	border-left: 75px solid transparent;
+	border-right: 75px solid transparent;
+	height: 0;
+	width: 375px;
+    background: none;
+    border-top: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bigger-trap-btn{
+    border-bottom: 262.5px solid var(--secondary);
+	border-left: 131.25px solid transparent;
+	border-right: 131.25px solid transparent;
+    width: 656.25px;
+}
+
+.small-btn-text,.med-btn-text,.big-btn-text{
+    font-size: 18px;
+    color: var(--background);
+}
+
+.small-btn-text{
+    margin-bottom: -225px;
+}
+
+.med-btn-text{
+    margin-bottom: -150px;
+}
+
+.big-btn-text{
+    margin-bottom: -250px;
+}
