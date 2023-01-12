@@ -1,4 +1,5 @@
 import React from "react";
+import SubmitButton from "./SubmitButton";
 
 
 const PageHeader = () =>{
@@ -7,7 +8,7 @@ const PageHeader = () =>{
     return(
         
         <header>
-            <button className="submit-btn new-btn">New</button>
+            <SubmitButton></SubmitButton>
                 <h1>
                     <span className="life-title">Life</span>Force
                 </h1>
