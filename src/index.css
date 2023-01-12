@@ -149,5 +149,11 @@ button:hover {
 
 /* completed */
 .completed{
+    transition: 0.5s;
     border-bottom-color: var(--tertiary) ;
+}
+
+.incomplete{
+    transition: 0.5s;
+    border-bottom-color: var(--main);
 }

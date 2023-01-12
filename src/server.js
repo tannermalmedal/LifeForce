@@ -25,11 +25,18 @@ app.get('/dailytasks', (req, res) => {
     });
 })
 
+app.get('/dailytasks/current', (req,res) => {
+    DailyTask.findOne({complete: false}).then((data) => {
+        res.json(data);
+    })
+})
+
 app.post('/dailytasks/new', (req,res) => {
     DailyTask.create({
         youMessage: req.body.youMessage,
         othersMessage: req.body.othersMessage,
         yourBodyMessage: req.body.yourBodyMessage,
+        complete: req.body.complete,
     }, (err, task) => {
         if(err){
             console.log(err);
@@ -49,17 +56,20 @@ app.delete('/dailytasks/delete/:id', (req, res) => {
     })
 })
 
-app.put('/dailytasks/complete/:id', (req, res) => {
+app.put('/dailytasks/update/:id', (req, res) => {
+    const location = req.body.location
     DailyTask.findOne({_id:req.params.id}, (err, task) => {
         if(err){
             console.log(err);
         } else{
-            task.complete === true ? task.complete = false : task.complete = true;
+            task[location] === true ? task[location] = false : task[location] = true;
             task.save();
             res.status(200).json(task);
         }
     })
 })
+
+
 
 //pull the react data out
 app.use('/dist', express.static(path.join(__dirname, '../dist')));

@@ -1,13 +1,19 @@
 import React from "react";
+import SmallButton from "./SmallButton";
+import MedButton from "./MedButton";
+import BigButton from "./BigButton";
 
-const ButtonPyramid = () => {
 
+const ButtonPyramid = (props) => {
+    const { currentTask } = props;
+
+    
 
     return (
             <div className='btn-container'>
-                <button className='triangle-btn'><span className="small-btn-text">You</span></button>
-                <button className='main-btn trap-btn'><span className='med-btn-text'>Others</span></button>
-                <button className='main-btn trap-btn bigger-trap-btn'><span className='big-btn-text'>Your Body</span></button>
+                <SmallButton currentTask = {props.currentTask}></SmallButton>
+                <MedButton currentTask = {props.currentTask}></MedButton>
+                <BigButton currentTask = {props.currentTask}></BigButton>
             </div>
     )
 }
