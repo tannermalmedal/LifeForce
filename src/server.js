@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -13,6 +14,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/lifeforce",{
 })
 .then(() => console.log("Connected to DB"))
 .catch(console.error);
+
+
 
 const DailyTask = require('./models/DailyTask')
 
@@ -56,6 +59,14 @@ app.put('/dailytasks/complete/:id', (req, res) => {
             res.status(200).json(task);
         }
     })
+})
+
+//pull the react data out
+app.use('/dist', express.static(path.join(__dirname, '../dist')));
+
+//serve html
+app.get('/', (req,res) => {
+    return res.status(200).sendFile(path.join(__dirname, '/index.html'));
 })
 
 

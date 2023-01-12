@@ -10,7 +10,7 @@
     --main: #fffffe;
     --highlight: #7f5af0;
     --secondary: #72757e;
-    --tertiary: #2cb67d;
+    --tertiary: #3ef6a9;
 }
 
 * {
@@ -41,13 +41,36 @@ body{
 /* header  */
 header{
     display:flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 }
 
 h1{
     font-size: 64px;
+    /* margin-right: auto;
+    margin-left: auto;
+    padding-left: 205px; */
+
+}
+
+.life-title{
+    color: var(--tertiary);
+}
+
+.submit-btn { 
+    justify-self: flex-end;
+    height: 40px;
+    width: 100px;
+    /* margin-right: 100px; */
+    background-color: var(--highlight);
+    border:none;
+    color: var(--button-text);
+    border-radius: 3px;
+}
+
+.submit-btn:hover, .new-btn:hover{
+    opacity: 80%;
 }
 
 
@@ -60,6 +83,7 @@ button{
 button:hover {
     border-bottom-color: var(--tertiary);
     transition: 0.5s;
+    
 }
 .btn-container{
     display:flex;
@@ -74,7 +98,7 @@ button:hover {
 	height: 0;
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
-	border-bottom: 200px solid var(--secondary);
+	border-bottom: 200px solid var(--main);
     background: none;
     border-top: none;
     display:flex;
@@ -86,7 +110,7 @@ button:hover {
 
 
 .trap-btn{
-    border-bottom: 150px solid var(--secondary);
+    border-bottom: 150px solid var(--main);
 	border-left: 75px solid transparent;
 	border-right: 75px solid transparent;
 	height: 0;
@@ -100,7 +124,7 @@ button:hover {
 }
 
 .bigger-trap-btn{
-    border-bottom: 262.5px solid var(--secondary);
+    border-bottom: 262.5px solid var(--main);
 	border-left: 131.25px solid transparent;
 	border-right: 131.25px solid transparent;
     width: 656.25px;
@@ -121,4 +145,9 @@ button:hover {
 
 .big-btn-text{
     margin-bottom: -250px;
+}
+
+/* completed */
+.completed{
+    border-bottom-color: var(--tertiary) ;
 }
