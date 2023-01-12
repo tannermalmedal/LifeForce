@@ -31,11 +31,13 @@ function App(){
                 }).then(res => res.json())
                   .then(data => {
                     //take newly created task and make it current task
+                    console.log("You've created a new task and set it as current", data);
                     setCurrentTask(data);
                     
                   })
                   .catch(err => console.error(err));
             }else{
+                console.log("You're previous task is still current", data)
                 //initializes current task if it already exists
                 setCurrentTask(data);
 

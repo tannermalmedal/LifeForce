@@ -18,7 +18,9 @@ const BigButton = (props) => {
             }
         }).then(res => res.json())
           .then(data => {
-            console.log(data);
+            console.log("You've made a PUT request @ BIG button",data);
+            
+            //toggles class based on status of DB
             data.yourBody === true ? setBigToggleState(true) : setBigToggleState(false);
             
           })

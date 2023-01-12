@@ -7,7 +7,7 @@ const DailyTaskSchema = new Schema({
     yourBody: {type:Boolean, default: false},
     youMessage: {type:String, default: "Nothing Added"},
     othersMessage: {type: String, default: "Nothing Added"},
-    yourBodyMessage: String,
+    yourBodyMessage: {type: String, default: "Nothing Added"},
     complete: {type: Boolean, default: false},
     time: {type: Date, default: Date.now()}
 })

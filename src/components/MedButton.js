@@ -8,7 +8,6 @@ const MedButton = (props) => {
     const id = props.currentTask._id;
 
     const clickHandler = (e) => {
-        //toggles class
 
         //toggles current buttons 'others' completion in DB
         fetch(`http://localhost:3000/dailytasks/update/${id}`, {
@@ -19,7 +18,9 @@ const MedButton = (props) => {
             }
         }).then(res => res.json())
           .then(data => {
-            console.log(data);
+            console.log("You've made a PUT request @ Med button",data);
+
+            //toggles class based on status of DB
             data.others === true ? setMedToggleState(true) : setMedToggleState(false);
           })
           .catch(err => console.error(err));

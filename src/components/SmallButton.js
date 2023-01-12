@@ -8,9 +8,6 @@ const SmallButton = (props) => {
     const id = props.currentTask._id;
 
     const clickHandler = (e) => {
-        //this changes the class on click, so the button appears completed
-
-        console.log(id);
 
         // this makes a put request to update the specific element to completed
         fetch(`http://localhost:3000/dailytasks/update/${id}`, {
@@ -21,7 +18,9 @@ const SmallButton = (props) => {
             }
         }).then(res => res.json())
           .then(data => {
-            console.log(data);
+            console.log("You've made a PUT request @ small button",data);
+
+            //toggles class based on status of DB
             data.you === true ? setSmallToggleState(true) : setSmallToggleState(false);
           })
           .catch(err => console.error(err));
