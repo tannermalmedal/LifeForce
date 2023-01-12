@@ -5,15 +5,13 @@ import BigButton from "./BigButton";
 
 
 const ButtonPyramid = (props) => {
-    const { currentTask } = props;
-
-    
+    const { currentTask, toggleSmallState, setSmallToggleState, toggleMedState, setMedToggleState, toggleBigState, setBigToggleState } = props;
 
     return (
             <div className='btn-container'>
-                <SmallButton currentTask = {props.currentTask}></SmallButton>
-                <MedButton currentTask = {props.currentTask}></MedButton>
-                <BigButton currentTask = {props.currentTask}></BigButton>
+                <SmallButton currentTask = {currentTask} toggleSmallState={toggleSmallState} setSmallToggleState= {setSmallToggleState}></SmallButton>
+                <MedButton currentTask = {currentTask} toggleMedState={toggleMedState} setMedToggleState={setMedToggleState}></MedButton>
+                <BigButton currentTask = {currentTask} toggleBigState={toggleBigState} setBigToggleState={setBigToggleState}></BigButton>
             </div>
     )
 }

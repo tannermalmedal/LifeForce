@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 const SmallButton = (props) => {
-    const [toggleSmallState, setSmallToggleState] = useState(false)
+
+    const{ toggleSmallState, setSmallToggleState } = props;
 
     const id = props.currentTask._id;
 

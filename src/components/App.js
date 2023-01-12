@@ -7,6 +7,9 @@ import ButtonPyramid from './ButtonPyramid';
 
 function App(){
     const [currentTask, setCurrentTask] = useState({});
+    const [toggleSmallState, setSmallToggleState] = useState(false);
+    const [toggleMedState, setMedToggleState] = useState(false);
+    const [toggleBigState, setBigToggleState] = useState(false)
     //can grab current task by selecting a task in database based on if it's completed or not
         //this works, because if it's complete we would create a new one, and if we delete it's just a hard delete
     
@@ -27,11 +30,20 @@ function App(){
                     }
                 }).then(res => res.json())
                   .then(data => {
-                    console.log(data);
+                    //take newly created task and make it current task
                     setCurrentTask(data);
+                    
                   })
                   .catch(err => console.error(err));
-            }else setCurrentTask(data);
+            }else{
+                //initializes current task if it already exists
+                setCurrentTask(data);
+
+                //sets relative initial state on buttons
+                setSmallToggleState(data.you);
+                setMedToggleState(data.others);
+                setBigToggleState(data.yourBody);
+            } 
         })
         .catch(err => {
             console.error(err);
@@ -42,12 +54,10 @@ function App(){
         getCurrentTask();
     },[]);
 
-    console.log(currentTask);
-
     return(
         <div className='app'>
             <PageHeader></PageHeader>
-            <ButtonPyramid currentTask={currentTask}></ButtonPyramid>
+            <ButtonPyramid currentTask={currentTask} toggleSmallState={toggleSmallState} setSmallToggleState={setSmallToggleState} toggleMedState={toggleMedState} setMedToggleState={setMedToggleState} toggleBigState={toggleBigState} setBigToggleState={setBigToggleState}></ButtonPyramid>
         </div>
     )
  }

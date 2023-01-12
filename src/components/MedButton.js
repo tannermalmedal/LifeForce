@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 const MedButton = (props) => {
-    const [toggleMedState, setMedToggleState] = useState(false)
+
+    const{ toggleMedState, setMedToggleState } = props;
 
     const id = props.currentTask._id;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const BigButton = (props) => {
-    const [toggleBigState, setBigToggleState] = useState(false)
+    const{ toggleBigState, setBigToggleState } = props;
 
     const id = props.currentTask._id;
 
