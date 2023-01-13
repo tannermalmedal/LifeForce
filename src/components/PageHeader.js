@@ -1,18 +1,21 @@
 import React from "react";
 import SubmitButton from "./SubmitButton";
+import NewButton from "./NewButton";
 
 
-const PageHeader = () =>{
+const PageHeader = (props) =>{
+
+    const { currentTask, setCurrentTask, getCurrentTask } = props;
 
 
     return(
         
         <header>
-            <SubmitButton></SubmitButton>
+            <NewButton currentTask={currentTask} setCurrentTask={setCurrentTask} getCurrentTask={getCurrentTask}></NewButton>
                 <h1>
                     <span className="life-title">Life</span>Force
                 </h1>
-            <button className = 'submit-btn'>Submit</button>
+            <SubmitButton currentTask={currentTask} setCurrentTask={setCurrentTask} getCurrentTask={getCurrentTask}></SubmitButton>
         </header>
         
     )

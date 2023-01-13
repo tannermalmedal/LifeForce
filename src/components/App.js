@@ -33,6 +33,11 @@ function App(){
                     //take newly created task and make it current task
                     console.log("You've created a new task and set it as current", data);
                     setCurrentTask(data);
+
+                    //sets relative initial state on buttons
+                    setSmallToggleState(data.you);
+                    setMedToggleState(data.others);
+                    setBigToggleState(data.yourBody);
                     
                   })
                   .catch(err => console.error(err));
@@ -58,7 +63,7 @@ function App(){
 
     return(
         <div className='app'>
-            <PageHeader></PageHeader>
+            <PageHeader currentTask={currentTask} setCurrentTask={setCurrentTask} getCurrentTask={getCurrentTask}></PageHeader>
             <ButtonPyramid currentTask={currentTask} toggleSmallState={toggleSmallState} setSmallToggleState={setSmallToggleState} toggleMedState={toggleMedState} setMedToggleState={setMedToggleState} toggleBigState={toggleBigState} setBigToggleState={setBigToggleState}></ButtonPyramid>
         </div>
     )
