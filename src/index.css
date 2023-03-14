@@ -157,3 +157,17 @@ button:hover {
     transition: 0.5s;
     border-bottom-color: var(--main);
 }
+
+.change-flex{
+    display: flex;
+    gap: 7rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* input styling */
+.info-input{
+    height: 8rem;
+    width: 20rem;
+    padding: .5rem;
+}

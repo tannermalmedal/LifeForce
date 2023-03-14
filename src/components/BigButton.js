@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const BigButton = (props) => {
-    const{ toggleBigState, setBigToggleState } = props;
+    const{ toggleSmallState, toggleMedState, toggleBigState, setBigToggleState } = props;
 
     const id = props.currentTask._id;
 
@@ -28,9 +28,14 @@ const BigButton = (props) => {
     }
 
     return(
-        <button className={ toggleBigState ? 'completed main-btn trap-btn bigger-trap-btn' : 'main-btn trap-btn bigger-trap-btn incomplete'} onClick={clickHandler}>
-            <span className='big-btn-text'>Your Body</span>
-        </button>
+        <>
+            {/* <div className = {toggleSmallState || toggleMedState || toggleBigState ? 'change-flex' : null}> */}
+                <button className={ toggleBigState ? 'completed main-btn trap-btn bigger-trap-btn' : 'main-btn trap-btn bigger-trap-btn incomplete'} onClick={clickHandler}>
+                    <span className='big-btn-text'>Your Body</span>
+                </button>
+                {/* {toggleBigState ? <input className="info-input"></input> : null} */}
+            {/* </div> */}
+        </>
     )
 }
 

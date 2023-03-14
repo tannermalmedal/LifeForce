@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const SmallButton = (props) => {
 
-    const{ toggleSmallState, setSmallToggleState } = props;
+    const{ toggleSmallState, toggleMedState, toggleBigState, setSmallToggleState } = props;
 
     const id = props.currentTask._id;
 
@@ -27,9 +27,14 @@ const SmallButton = (props) => {
     }
 
     return(
-        <button className={ toggleSmallState ? 'completed triangle-btn' : 'triangle-btn incomplete'} onClick={clickHandler}>
-            <span className="small-btn-text">You</span>
-        </button>
+        <> 
+            {/* <div className = {toggleSmallState || toggleMedState || toggleBigState ? 'change-flex' : null}> */}
+                <button className={ toggleSmallState ? 'completed triangle-btn' : 'triangle-btn incomplete'} onClick={clickHandler}>
+                    <span className="small-btn-text">You</span>
+                </button>
+                {/* {toggleSmallState ? <input className="info-input"></input> : undefined} */}
+            {/* </div> */}
+        </>
     )
 }
 

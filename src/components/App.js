@@ -9,7 +9,7 @@ function App(){
     const [currentTask, setCurrentTask] = useState({});
     const [toggleSmallState, setSmallToggleState] = useState(false);
     const [toggleMedState, setMedToggleState] = useState(false);
-    const [toggleBigState, setBigToggleState] = useState(false)
+    const [toggleBigState, setBigToggleState] = useState(false);
     //can grab current task by selecting a task in database based on if it's completed or not
         //this works, because if it's complete we would create a new one, and if we delete it's just a hard delete
     

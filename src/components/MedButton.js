@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const MedButton = (props) => {
 
-    const{ toggleMedState, setMedToggleState } = props;
+    const{ toggleSmallState, toggleMedState, toggleBigState, setMedToggleState } = props;
 
     const id = props.currentTask._id;
 
@@ -27,9 +27,14 @@ const MedButton = (props) => {
     }
 
     return(
-        <button className={ toggleMedState ? 'completed main-btn trap-btn' : 'main-btn trap-btn incomplete'} onClick={clickHandler}>
-            <span className='med-btn-text'>Others</span>
-        </button>
+        <>
+            {/* <div className = {toggleSmallState || toggleMedState || toggleBigState ? 'change-flex' : undefined}> */}
+                <button className={ toggleMedState ? 'completed main-btn trap-btn' : 'main-btn trap-btn incomplete'} onClick={clickHandler}>
+                    <span className='med-btn-text'>Others</span>
+                </button>
+                {/* {toggleMedState ? <input className="info-input"></input> : null} */}
+            {/* </div> */}
+        </>
     )
 }
 
