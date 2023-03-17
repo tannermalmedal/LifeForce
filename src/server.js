@@ -70,6 +70,30 @@ app.put('/dailytasks/update/:id', (req, res) => {
 })
 
 
+// @TODO
+//this is receiving the full task, and the message
+//need to add the message string to whichever value is currently updated
+//need to then change correlated True values to false, so buttons we can have input field disappear after
+//@TODO ON FRONTEND
+//need to change components way of rendering to focus on you, yourBody,others && to check if the message is custom.
+//if message is custom, but value of you,yourboyd,or others is false, button is green, but input field is gone
+//if message is not custom, but you,yourbody,and others is true, button button is green and input field shows;
+app.put('/dailytasks/updateMessage/:id', (req,res) => {
+    const location = req.body.location;
+    const message = req.body.message;
+
+    DailyTask.findOne({_id: req.params.id}, (err, task) => {
+        if(err){
+            console.log(err);
+        } else{
+            task[location] = message;
+            task.save();
+            res.status(200).json(task);
+        }
+    })
+});
+
+
 
 //pull the react data out
 app.use('/dist', express.static(path.join(__dirname, '../dist')));

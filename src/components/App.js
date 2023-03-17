@@ -10,6 +10,9 @@ function App(){
     const [toggleSmallState, setSmallToggleState] = useState(false);
     const [toggleMedState, setMedToggleState] = useState(false);
     const [toggleBigState, setBigToggleState] = useState(false);
+    const [youMessage, setYouMessage] = useState('');
+    const [yourBodyMessage, setYourBodyMessage] = useState('');
+    const [othersMessage, setOthersMessage] = useState('');
     //can grab current task by selecting a task in database based on if it's completed or not
         //this works, because if it's complete we would create a new one, and if we delete it's just a hard delete
     
@@ -38,6 +41,9 @@ function App(){
                     setSmallToggleState(data.you);
                     setMedToggleState(data.others);
                     setBigToggleState(data.yourBody);
+                    setOthersMessage(data.othersMessage);
+                    setYourBodyMessage(data.othersBodyMessage);
+                    setYouMessage(data.youMessage);
                     
                   })
                   .catch(err => console.error(err));
@@ -50,6 +56,9 @@ function App(){
                 setSmallToggleState(data.you);
                 setMedToggleState(data.others);
                 setBigToggleState(data.yourBody);
+                setOthersMessage(data.othersMessage);
+                setYourBodyMessage(data.othersBodyMessage);
+                setYouMessage(data.youMessage);
             } 
         })
         .catch(err => {

@@ -171,3 +171,17 @@ button:hover {
     width: 20rem;
     padding: .5rem;
 }
+
+.input-heading{
+    color: var(--main);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.input-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

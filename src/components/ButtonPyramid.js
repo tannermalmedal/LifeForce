@@ -2,6 +2,7 @@ import React from "react";
 import SmallButton from "./SmallButton";
 import MedButton from "./MedButton";
 import BigButton from "./BigButton";
+import InputField from "./InputField";
 
 
 const ButtonPyramid = (props) => {
@@ -14,7 +15,9 @@ const ButtonPyramid = (props) => {
                 <MedButton currentTask = {currentTask} toggleSmallState={toggleSmallState} toggleMedState={toggleMedState} toggleBigState={toggleBigState} setMedToggleState={setMedToggleState}></MedButton>
                 <BigButton currentTask = {currentTask} toggleSmallState={toggleSmallState} toggleMedState={toggleMedState} toggleBigState={toggleBigState} setBigToggleState={setBigToggleState}></BigButton>
             </div>
-            {toggleSmallState || toggleBigState || toggleMedState ? <textarea className="info-input"></textarea> : null}
+            {toggleSmallState || toggleBigState || toggleMedState ?
+              <InputField props = {props}></InputField>
+              : null}
         </div>  
     )
 }
